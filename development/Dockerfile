@@ -9,12 +9,13 @@ RUN apt-get update && apt-get install -y \
   php5-fpm \
   php5-cli
 
-RUN bash -c "curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -"
+RUN bash -c "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -"
 RUN bash -c "sudo apt-get install -y nodejs"
 
 #install some things
 RUN bash -c "npm install -g bower"
 RUN bash -c "npm install -g gulp"
+RUN bash -c "npm install -g flightplan"
 
 #install php composer
 RUN bash -c "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer"
