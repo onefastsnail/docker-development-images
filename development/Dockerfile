@@ -25,6 +25,6 @@ RUN bash -c "curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/ph
 RUN bash -c "chmod +x wp-cli.phar"
 RUN bash -c "mv wp-cli.phar /usr/local/bin/wp"
 
-WORKDIR /data
+WORKDIR /app
 
 CMD ["bash"]
