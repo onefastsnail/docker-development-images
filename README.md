@@ -1,6 +1,6 @@
-# Docker tools 
+# Docker development images 
 
-This repo simply contains the Dockerfiles to build the images we are using in our Dockerpress build. For now the commands reference onefastsnail's public images, will change to the Evermade vendor shortly.
+This repo simply contains the Dockerfiles to build the images to use during development. For now the commands reference my public found on Dockerhub.
 
 ### Node related commands
 
@@ -28,7 +28,7 @@ You can also just bash directly into this container, from which all the tools ar
 For now only the main deploy and build tasks are available and should be run in the app/ folder.
 
 * docker run --rm -it -v $SSH_AUTH_SOCK:/tmp/agent.sock -e SSH_AUTH_SOCK=/tmp/agent.sock -v $(pwd):/data onefastsnail/development fly test:staging
-* docker run --rm -it -v $SSH_AUTH_SOCK:/tmp/agent.sock -e SSH_AUTH_SOCK=/tmp/agent.sock -v $(pwd):/data onefastsnail/development fly deploy:staging
+* docker run --rm -it -v $SSH_AUTH_SOCK:/tmp/agent.sock -e SSH_AUTH_SOCK=/tmp/agent.sock -v $(pwd):/data onefastsnail/development fly ping:staging
 * docker run --rm -it -v $SSH_AUTH_SOCK:/tmp/agent.sock -e SSH_AUTH_SOCK=/tmp/agent.sock -v $(pwd):/data onefastsnail/development fly deploy:production
 
 
@@ -36,12 +36,12 @@ For now only the main deploy and build tasks are available and should be run in 
 
 Run these commands inside the app/dist folder, ensure you link to the correct .env files and vars.
 
-* docker run --rm -it -v $(pwd):/app --link mysql:mysql --env-file ../../env/mysql.env --env-file ../../env/app.env --env-file ../../env/wp.env onefastsnail/wpcli wp --allow-root user list
+* docker run --rm -it -v $(pwd):/app --link mysql:mysql onefastsnail/wpcli wp --allow-root user list
 
 
 ## Notes
 
-* To be used on a Linux machine, as the reference to the ssh keys dont work on a Mac.
+* To be used on a Linux machine, as the reference to the $SSH_AUTH_SOCK variable doesnt exist on a Mac, and requires some symbolic linking goodness :).
 
 ## Credits
 
