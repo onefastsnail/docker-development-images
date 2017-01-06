@@ -1,6 +1,10 @@
 # Docker development images 
 
-This repo simply contains the Dockerfiles to build the images to use during development. For now the commands reference my public found on Dockerhub.
+**Will update this readme shortly! :)**
+
+I like to utlise my development tools through Docker containers, this way it keeps my host machine clean, and keeps tools consistent and stable across machines and developers.
+
+This repo simply contains the Dockerfiles to build the images to use during development. For now the commands reference my public found on [my Dockerhub account](https://hub.docker.com/u/onefastsnail/).
 
 ### Node related commands
 
@@ -43,10 +47,12 @@ Run these commands inside the app/dist folder, ensure you link to the correct .e
 
 * To be used on a Linux machine, as the reference to the $SSH_AUTH_SOCK variable doesnt exist on a Mac, and requires some symbolic linking goodness :).
 
-## Credits
+## Contributors
 
 Paul Stewart
 
 ## License
 
-What license? :)
+License: GPLv2 or later
+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html

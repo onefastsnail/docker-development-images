@@ -7,7 +7,10 @@ RUN apt-get update && apt-get install -y \
   git \
   npm\
   php5-fpm \
-  php5-cli
+  php5-mysql \
+  php5-cli \
+  php5-curl \
+  mysql-client
 
 RUN bash -c "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -"
 RUN bash -c "sudo apt-get install -y nodejs"

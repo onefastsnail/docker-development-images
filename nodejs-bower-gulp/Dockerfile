@@ -2,7 +2,7 @@
 FROM node:4.5.0
 
 # Install Bower & Gulp
-RUN npm install -g bower gulp
+RUN npm install -g bower gulp nightwatch
 
 # Define working directory.
 WORKDIR /app
